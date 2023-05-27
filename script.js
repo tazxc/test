@@ -44,22 +44,27 @@
 
 window.addEventListener('click', function(event){
 
-	let counter
 	let counterT
+	let counter
+	
 
 	if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
 		counterT = event.target.closest('.counter')
 		counter = counterT.querySelector('[data-counter]')
+
+		
 	}
 
 	if(event.target.dataset.action === 'plus'){
 		counter.innerText = ++counter.innerText
+		
 	}
 
 	if(event.target.dataset.action === 'minus'){
 
 		if (counter.innerText > 1) {
 			counter.innerText = --counter.innerText
+
 		}
 		
 	}
@@ -89,25 +94,21 @@ window.addEventListener('click', function(event) {
 		// 	document.getElementById('showScroll').innerHTML = pageYOffset + 'px';
 		// })
 
-		const cartItemHTML = `<div class="basket">
- 								<div class="card" data-id="${productInfo.id}">
- 									<div class="product_basket">
- 										<img src="${productInfo.imgSrc}"  alt="">
- 									</div>
- 									<div class="titlePBasket">
- 									<p class="nameProduct_basket">${productInfo.title}</p>
- 									</div>
- 								</div>
- 								
- 								<div class="counter">
-									<button class="item_control" data-action="minus">-</button>
-									<div class="item_current" data-counter>${productInfo.counter}</div>
-									<button class="item_control" data-action="plus">+</button>
-								</div>
-								<div class="productPrice_basket">
- 									<p class="PriceP_Basket">${productInfo.price}</p>
- 								</div>
- 							</div>`
+		const cartItemHTML = `<div class="cardProductBasket">
+ 									<img src="${productInfo.imgSrc}" alt="">
+
+ 									<p>${productInfo.title}</p>
+ 									
+
+ 									<div class="counterBasket">
+										<button class="item_control" data-action="minus">-</button>
+										<div class="item_current" data-counter>${productInfo.counter}</div>
+										<button class="item_control" data-action="plus">+</button>
+									</div>
+
+ 									<p>${productInfo.price}</p>
+
+ 								</div>`
 
 
 
@@ -117,9 +118,34 @@ window.addEventListener('click', function(event) {
 
 
 
+// счетчик для корзины
 
+window.addEventListener('click', function(event){
 
+	let counterBasket
+	let counterB
 
+	if (event.target.dataset.action === 'plus' || event.target.dataset.action === 'minus') {
+		counterBasket = event.target.closest('.counterBasket')
+		counterB = counterBasket.querySelector('[data-counter]')
+
+		
+	}
+
+	if(event.target.dataset.action === 'plus'){
+		counterB.innerText = ++counterB.innerText
+		
+	}
+
+	if(event.target.dataset.action === 'minus'){
+
+		if (counterB.innerText > 1) {
+			counterB.innerText = --counterB.innerText
+
+		}
+		
+	}
+})
 
 
 

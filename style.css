@@ -100,7 +100,6 @@ body{
 	align-items: center;
 	font-size: 15px;
 	margin-top: 10px;
-
 }
 
 .item_control{
@@ -139,6 +138,7 @@ body{
 
 .basket img{
 	height: 200px;
+	margin-right: 300px;
 }
 
 .cardProductBasket{
@@ -146,6 +146,20 @@ body{
 	justify-content: center;
 	align-items: center;
 }
+
+.cardProductBasket p{
+	padding-right: 200px;
+	font-size: 30px;
+}
+
+.counterBasket{
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+	margin-top: 10px;
+	padding-right: 160px;
+}
+
 
 
 
@@ -181,6 +195,8 @@ body{
 	font-size: 30px;
 	cursor: pointer;
 }
+
+
 
 
 
